@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import {
+  HashRouter,
+  Route,
+  Switch
+} from "react-router-dom";
 import './App.css';
 import apiRequest from './api/markApi';
 
@@ -54,8 +59,18 @@ function App() {
 
   return (
     <div className="App">
-      <BookMark marks={marks} categories={categories} onRemove={onRemoveMark} />
-      <AddBookMark marks={marks} categories={categories} onAdd={onAddMark} />
+      <HashRouter>
+        <Switch>
+          <Route path="/" exact>
+            <BookMark marks={marks} categories={categories} onRemove={onRemoveMark} />
+          </Route>
+          <Route path="/add-bookmark">
+            <AddBookMark marks={marks} categories={categories} onAdd={onAddMark} />
+          </Route>
+        </Switch>
+      </HashRouter>
+
+
     </div>
   );
 }

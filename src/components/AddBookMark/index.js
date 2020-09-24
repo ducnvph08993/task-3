@@ -1,14 +1,18 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 import './AddBookMark.scss'
 
 const AddBookMark = ({ onAdd, categories }) => {
+    let redirect = useHistory();
     const { register, handleSubmit, errors } = useForm();
     const onHandleSubmit = (data) => {
         const newLink = {
             ...data,
         }
-        onAdd(newLink);
+        console.log(newLink);
+        // onAdd(newLink);
+        // redirect.push("/");
     };
     return (
         <div className="container">
@@ -41,7 +45,7 @@ const AddBookMark = ({ onAdd, categories }) => {
                         <select className="form-control" name="cate_id" ref={register} defaultValue={1}>
                             {
                                 categories.map(({ id, name }, index) => (
-                                    <option key={index} value={id} >{name}</option>
+                                    <option key={index} value={Math.floor(id)} >{name}</option>
                                 ))
                             }
                         </select>

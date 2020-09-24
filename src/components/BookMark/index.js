@@ -1,5 +1,6 @@
 import React from 'react'
 import './BookMark.scss'
+import { Link } from 'react-router-dom'
 
 const BookMark = ({ marks, categories, onRemove }) => {
     const onHandleRemove = (id) => {
@@ -8,6 +9,9 @@ const BookMark = ({ marks, categories, onRemove }) => {
     return (
         <div className="container">
             <h1>Bookmarks</h1>
+            <Link to="/add-bookmark" className="btn btn-primary">
+                Add
+            </Link>
             <div className="row">
                 <div className="col-6">
                     <h3>
@@ -25,7 +29,7 @@ const BookMark = ({ marks, categories, onRemove }) => {
                                     <div id="xxxx" className="title-mark" key={index} >
                                         <i className="far fa-bookmark" id="icon" style={{ fontSize: 40, paddingLeft: 12, float: "left" }}></i>
                                         <span>{mark.name}</span>
-                                        <button onClick={() => onHandleRemove(mark.id)} className="btn btn-danger">Delete</button>
+                                        <button onClick={() => { if (window.confirm('Delete this item?')) { onHandleRemove(mark.id) }; }} className="btn btn-danger">Delete</button>
                                         <a href={mark.http} className="btn btn-success">Visit</a>
                                     </div>
                                 ) : null
@@ -48,7 +52,7 @@ const BookMark = ({ marks, categories, onRemove }) => {
                                     <div className="title-mark" key={index} >
                                         <i className="far fa-bookmark" id="icon" style={{ fontSize: 40, paddingLeft: 12, float: "left" }}></i>
                                         <span>{mark.name}</span>
-                                        <button onClick={() => onHandleRemove(mark.id)} className="btn btn-danger">Delete</button>
+                                        <button onClick={() => { if (window.confirm('Delete this item?')) { onHandleRemove(mark.id) }; }} className="btn btn-danger">Delete</button>
                                         <a href={mark.http} className="btn btn-success">Visit</a>
                                     </div>
                                 ) : null

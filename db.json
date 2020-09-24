@@ -35,6 +35,12 @@
       "http": "http://lorempixel.com/640/480/people",
       "cate_id": 2,
       "id": 6
+    },
+    {
+      "name": "fds",
+      "http": "http://lorempixel.com/640/480/people",
+      "cate_id": "1",
+      "id": 7
     }
   ],
   "categories": [
