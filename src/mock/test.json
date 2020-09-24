@@ -59,12 +59,6 @@
       "http": "http://lorempixel.com/640/480/people",
       "cate_id": "2",
       "id": 11
-    },
-    {
-      "name": "fdsdsf",
-      "http": "http://lorempixel.com/640/480/people",
-      "cate_id": "1",
-      "id": 12
     }
   ],
   "categories": [
