@@ -1,0 +1,55 @@
+h1 {
+  font-weight: bolder;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.row {
+  .col-6 {
+    .title-mark {
+      $div-size: 450px;
+      width: $div-size;
+      height: 80px;
+      background-color: lightgoldenrodyellow;
+      border: 1px solid black;
+
+      margin: 0 auto;
+      margin-top: 15px !important;
+      padding: 20px 0px;
+
+      span {
+        padding-left: 10px;
+        font-size: 25px;
+      }
+
+      button {
+        width: 75px;
+        height: 40px;
+        margin: 0 10px;
+        float: right;
+      }
+
+      a {
+        width: 75px;
+        height: 40px;
+        margin: 0 10px;
+        float: right;
+      }
+
+      // #icon {
+      //   font-size: 40;
+      //   padding-left: 8;
+      //   float: left;
+      // }
+    }
+    h3 {
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+}
+// #icon {
+//   font-size: 40;
+//   padding-left: 8;
+//   float: left;
+// }

@@ -1,0 +1,50 @@
+{
+  "mark": [
+    {
+      "id": 1,
+      "name": "Twitter",
+      "http": "https://twitter.com/?lang=vi",
+      "cate_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Instagram",
+      "http": "https://www.instagram.com/?hl=vi",
+      "cate_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Facebook",
+      "http": "https://www.facebook.com/",
+      "cate_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Youtube",
+      "http": "https://www.youtube.com/",
+      "cate_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Phimmoi",
+      "http": "http://www.phimmoizz.net/",
+      "cate_id": 2
+    },
+    {
+      "name": "test1",
+      "http": "http://lorempixel.com/640/480/people",
+      "cate_id": 2,
+      "id": 6
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Social NetWork"
+    },
+    {
+      "id": 2,
+      "name": "Entertainment"
+    }
+  ]
+}
