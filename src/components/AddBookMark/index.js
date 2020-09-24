@@ -10,9 +10,8 @@ const AddBookMark = ({ onAdd, categories }) => {
         const newLink = {
             ...data,
         }
-        console.log(newLink);
-        // onAdd(newLink);
-        // redirect.push("/");
+        onAdd(newLink);
+        redirect.push("/");
     };
     return (
         <div className="container">
