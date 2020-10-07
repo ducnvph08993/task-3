@@ -3,6 +3,7 @@ import './BookMark.scss'
 import { Link } from 'react-router-dom'
 
 const BookMark = ({ marks, categories, onRemove }) => {
+    console.log(marks);
     const onHandleRemove = (id) => {
         onRemove(id);
     }
@@ -17,7 +18,7 @@ const BookMark = ({ marks, categories, onRemove }) => {
                     <h3>
                         {
                             categories.map(cate => (
-                                cate.id === 1 ? cate.name : " "
+                                cate.id == 1 ? cate.name : " "
                             ))
                         }
                     </h3>
@@ -40,7 +41,7 @@ const BookMark = ({ marks, categories, onRemove }) => {
                     <h3>
                         {
                             categories.map(cate => (
-                                cate.id === 2 ? cate.name : ""
+                                cate.id == 2 ? cate.name : ""
                             ))
                         }
                     </h3>

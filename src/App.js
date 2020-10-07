@@ -11,49 +11,40 @@ import BookMark from './components/BookMark';
 import AddBookMark from './components/AddBookMark';
 import db from './mock/index';
 
+
 function App() {
   const [marks, setMarks] = useState([]);
   console.log(marks);
   const [categories, setCate] = useState([]);
-  // const url = "https://5f5ee4c3df620f00163e504c.mockapi.io/categories/1/bookmarks";
   useEffect(() => {
     const getMarks = async () => {
       try {
         const response = await apiRequest.getAll();
-        console.log(response);
         if (response.status === 200) {
-          setMarks(db.Test.mark)
+          setMarks(response.data)
         }
-        // setMarks(data);
       } catch (error) {
         console.log(error);
       }
-
-      // (apiRequest.getAll(), {
-      //   method: 'get'
-      // })
-      //   .then(response => console.log(response))
-
-      // .then(data => {
-      //   console.log(data);
-      //   // setMarks(data)
-      // })
     }
     getMarks();
-    // const getCate = async () => {
-    //   try {
-    //     const { data } = await apiRequest.getAllCate();
-    //     setCate(data);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
-    // getCate();
+    const getCate = async () => {
+      try {
+        const response = await apiRequest.getAllCate();
+        if (response.status === 200) {
+          setCate(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getCate();
   }, [])
 
   const onAddMark = async (mark) => {
     try {
       const { data } = await apiRequest.create(mark);
+      console.log(data);
       setMarks([
         ...marks,
         data
@@ -61,6 +52,12 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+    // if (response.status === 200) {
+    //   setMarks([
+    //     ...marks,
+    //     response.data
+    //   ])
+    // }
   }
 
   const onRemoveMark = (id) => {
