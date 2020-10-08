@@ -9,12 +9,10 @@ import apiRequest from './api/markApi';
 
 import BookMark from './components/BookMark';
 import AddBookMark from './components/AddBookMark';
-import db from './mock/index';
 
 
 function App() {
   const [marks, setMarks] = useState([]);
-  console.log(marks);
   const [categories, setCate] = useState([]);
   useEffect(() => {
     const getMarks = async () => {
@@ -44,7 +42,6 @@ function App() {
   const onAddMark = async (mark) => {
     try {
       const { data } = await apiRequest.create(mark);
-      console.log(data);
       setMarks([
         ...marks,
         data
@@ -52,12 +49,6 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-    // if (response.status === 200) {
-    //   setMarks([
-    //     ...marks,
-    //     response.data
-    //   ])
-    // }
   }
 
   const onRemoveMark = (id) => {
