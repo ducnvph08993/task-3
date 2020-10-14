@@ -9,6 +9,7 @@ import apiRequest from './api/markApi';
 
 import BookMark from './components/BookMark';
 import AddBookMark from './components/AddBookMark';
+import AddCate from './components/AddCate';
 
 
 function App() {
@@ -61,6 +62,18 @@ function App() {
     }
   }
 
+  const onAddCate = async (cate) => {
+    try {
+      const { data } = await apiRequest.createCate(cate);
+      setCate([
+        ...categories,
+        data
+      ])
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="App">
       <HashRouter>
@@ -69,7 +82,10 @@ function App() {
             <BookMark marks={marks} categories={categories} onRemove={onRemoveMark} />
           </Route>
           <Route path="/add-bookmark">
-            <AddBookMark marks={marks} categories={categories} onAdd={onAddMark} />
+            <AddBookMark categories={categories} onAdd={onAddMark} />
+          </Route>
+          <Route path="/add-cate">
+            <AddCate onAdd={onAddCate} />
           </Route>
         </Switch>
       </HashRouter>

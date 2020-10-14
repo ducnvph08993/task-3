@@ -41,7 +41,7 @@ const AddBookMark = ({ onAdd, categories }) => {
                     </div>
                     <div className="form-group">
                         <label>Categories</label>
-                        <select className="form-control" name="cate_id" ref={register} defaultValue={1}>
+                        <select className="form-control" name="categoryId" ref={register} defaultValue={1}>
                             {
                                 categories.map(({ id, name }, index) => (
                                     <option key={index} value={Math.floor(id)} >{name}</option>
